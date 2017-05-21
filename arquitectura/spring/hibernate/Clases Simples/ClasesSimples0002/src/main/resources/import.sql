@@ -1,1 +1,0 @@
-insert into usuario values(1000,0,'a','b')
