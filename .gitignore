@@ -20,3 +20,16 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/arquitectura/PracticaCapas/target/
+/arquitectura/PracticaPruebas/target/
+/arquitectura/SinCapas/target/
+/arquitectura/ObjetosSimulados/EjemploMock0001Maven/target/
+/arquitectura/ObjetosSimulados/EjemploMock0002Maven/target/
+/arquitectura/CapasConServicios/target/
+/arquitectura/CapasConServiciosYDatos/target/
+/arquitectura/java8/PracticaPosibleSolucion/target/
+/arquitectura/java8/Rangos/target/
+/arquitectura/java8/Lambdas/target/
+/arquitectura/java8/EjemploStreams/target/
+/arquitectura/java8/EjemploCompletableFuturos/target/
+/arquitectura/java8/nio/basico/target/

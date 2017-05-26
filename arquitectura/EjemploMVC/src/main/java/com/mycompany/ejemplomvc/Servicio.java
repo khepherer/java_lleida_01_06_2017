@@ -3,18 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.ejemplocapas;
+package com.mycompany.ejemplomvc;
 
 /**
  *
- * @author iconotc
+ * @author usuario
  */
-public class Principal {
+public class Servicio {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    Double ejecutar(String info) {
+        return Math.random();
     }
-    
 }

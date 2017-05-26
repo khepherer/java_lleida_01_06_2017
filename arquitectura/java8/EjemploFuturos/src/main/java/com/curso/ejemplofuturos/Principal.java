@@ -50,9 +50,7 @@ public class Principal {
             p.pool.shutdown();
             while (!p.pool.isTerminated());
             out.println("Fin");
-        } catch (IOException ex) {
-            LOG.log(Level.SEVERE, null, ex);
-        } catch (InterruptedException | ExecutionException | URISyntaxException ex) {
+        } catch (IOException | InterruptedException | ExecutionException | URISyntaxException ex) {
             LOG.log(Level.SEVERE, null, ex);
         }
     }
