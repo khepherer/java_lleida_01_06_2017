@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.persistenciaii;
+package com.mycompany.persistencia;
 
-import com.mycompany.persistenciaii.modelo.Aficion;
-import com.mycompany.persistenciaii.modelo.Persona;
+import com.mycompany.persistencia.modelo.Aficion;
+import com.mycompany.persistencia.modelo.Persona;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.persistence.EntityManager;

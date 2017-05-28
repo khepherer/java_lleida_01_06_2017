@@ -3,35 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.persistenciaii.modelo;
+package com.mycompany.persistencia.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author iconotc
  */
 @Entity
-public class Aficion implements Serializable {
+public class Persona implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
-    @ManyToOne
-    private Persona persona;
 
     private String nombre;
 
-    public Aficion() {
+    public Persona() {
     }
 
-    public Aficion(String nombre) {
+    public Persona(String nombre) {
         this.nombre = nombre;
     }
 
@@ -53,12 +53,15 @@ public class Aficion implements Serializable {
         this.nombre = nombre;
     }
 
-    public Persona getPersona() {
-        return persona;
+    @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
+    private List<Aficion> aficiones = new ArrayList<>();
+
+    public List<Aficion> getAficiones() {
+        return aficiones;
     }
 
-    public void setPersona(Persona persona) {
-        this.persona = persona;
+    public void setAficiones(List<Aficion> aficiones) {
+        this.aficiones = aficiones;
     }
 
     public Long getId() {
@@ -79,16 +82,16 @@ public class Aficion implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Aficion)) {
+        if (!(object instanceof Persona)) {
             return false;
         }
-        Aficion other = (Aficion) object;
+        Persona other = (Persona) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return "Aficion{" + "id=" + id + ", nombre=" + nombre + '}';
+        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", aficiones=" + aficiones + ", clase del atributo aficiones="+ aficiones.getClass()+'}';
     }
 
 }

@@ -33,3 +33,7 @@ hs_err_pid*
 /arquitectura/java8/EjemploStreams/target/
 /arquitectura/java8/EjemploCompletableFuturos/target/
 /arquitectura/java8/nio/basico/target/
+/Jdbc/ejemplos/Persistencia/target/
+/Jdbc/ejemplos/UsoJdbcMySql/target/
+/Jdbc/ejemplos/ResultSetObjetos/target/
+/Jdbc/ejemplos/UsoRowSet/target/

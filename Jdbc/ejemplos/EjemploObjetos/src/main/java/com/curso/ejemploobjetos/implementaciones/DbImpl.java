@@ -25,9 +25,8 @@ public class DbImpl implements Db {
 
     @Override
     public Connection abrir() {
-        Connection con = null;
         try {
-            con = DriverManager.getConnection(URL, USUARIO, CLAVE);
+            Connection con = DriverManager.getConnection(URL, USUARIO, CLAVE);
             LOG.log(Level.INFO, "Conexión abierta");
             return con;
         } catch (SQLException ex) {
