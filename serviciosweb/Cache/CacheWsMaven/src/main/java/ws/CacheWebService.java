@@ -19,14 +19,16 @@ import javax.jws.WebParam;
 @WebService(serviceName = "CacheWebService")
 public class CacheWebService {
 
- private Cache<String, Date> cache = new MemoriaCache();
+ private final Cache<String, Date> cache = new MemoriaCache();
 
     /**
      * This is a sample web service operation
+     * @param txt
+     * @return 
      */
     @WebMethod(operationName = "cache")
     public String mensajeEnCache(@WebParam(name = "mensaje") String txt) {
-        Date valor = null;
+        Date valor;
         if ((valor = cache.get(txt)) == null) {
             valor = new Date();
             cache.put(txt, valor);

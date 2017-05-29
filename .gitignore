@@ -39,3 +39,13 @@ hs_err_pid*
 /Jdbc/ejemplos/UsoRowSet/target/
 /serviciosweb/ClasesSimples0001Java8/target/
 /serviciosweb/Remoting/SpringRemotingHessianServer/build/
+/serviciosweb/Broker/ServicioUnoMvn/target/
+/serviciosweb/Broker/ServicioDosMvn/target/
+/serviciosweb/Broker/BrokerWsMvn/target/
+/serviciosweb/Broker/ClienteBrokerWsMvn/target/
+/serviciosweb/Cache/CacheWsMaven/target/
+/serviciosweb/Cache/ClienteCacheWsMaven/target/
+/serviciosweb/Objetos/EjemploWsObjetosMaven/target/
+/serviciosweb/Objetos/ClienteEjemploWsObjetosMaven/target/
+/serviciosweb/Persistencia/PersistenciaWsMvn/target/
+/serviciosweb/Persistencia/ClientePersistenciaWsMvn/target/
