@@ -1,8 +1,0 @@
-SpringRemotingRmiLib Biblioteca empleada por el servidor de "remoting" y por el cliente
-SprinRemotingRmiServer Servidor "remoting" usando RMI
-SpringRemotingRMIClient Cliente "remoting" usando RMI
-SpringRemotingHessianServer: remoting con Hessian
-SpringRemotingHessianClient: cliente para el SpringRemotingHessianServer
-
-
-
