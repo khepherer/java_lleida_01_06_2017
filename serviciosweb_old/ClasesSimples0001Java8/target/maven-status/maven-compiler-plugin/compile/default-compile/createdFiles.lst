@@ -1,0 +1,6 @@
+com\curso\funcional\Transaccional.class
+com\curso\funcional\EjecutorTransaccional.class
+com\curso\beans\UsuarioInmutable.class
+com\curso\utilidades\HibernateUtil.class
+com\curso\funcional\QueryTransaccional.class
+com\curso\clasessimples0001java8\Principal.class

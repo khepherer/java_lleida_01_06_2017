@@ -37,3 +37,5 @@ hs_err_pid*
 /Jdbc/ejemplos/UsoJdbcMySql/target/
 /Jdbc/ejemplos/ResultSetObjetos/target/
 /Jdbc/ejemplos/UsoRowSet/target/
+/serviciosweb/ClasesSimples0001Java8/target/
+/serviciosweb/Remoting/SpringRemotingHessianServer/build/
