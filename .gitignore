@@ -49,3 +49,6 @@ hs_err_pid*
 /serviciosweb/Objetos/ClienteEjemploWsObjetosMaven/target/
 /serviciosweb/Persistencia/PersistenciaWsMvn/target/
 /serviciosweb/Persistencia/ClientePersistenciaWsMvn/target/
+/serviciosweb/Dispatch/MensajeLibMaven/target/
+/serviciosweb/Dispatch/EjemploWsMaven/target/
+/serviciosweb/Dispatch/EjemploWsClienteMaven/target/
