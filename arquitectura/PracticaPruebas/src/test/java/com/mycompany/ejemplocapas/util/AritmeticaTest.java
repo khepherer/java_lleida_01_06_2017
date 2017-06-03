@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
 
 /**
  *
@@ -17,20 +18,26 @@ import static org.junit.Assert.*;
  */
 public class AritmeticaTest {
 
+    private Aritmetica instancia;
+
+    @Before
+    public void init() {
+        instancia = new Aritmetica();
+    }
+
     @Test(timeout = 1000)
-    public void forzarTimeoutTest(){
+    public void forzarTimeoutTest() {
         System.out.println("Forzar un timeout");
-        Aritmetica a = new Aritmetica();
-        int resultado = a.forzarTimeout();
+        int resultado = instancia.forzarTimeout();
         assertEquals(0, resultado);
     }
+
     @Test
     public void testMediaValoresOk() {
         System.out.println("Media con valores correctos");
         List<Double> numeros = Arrays.asList(2.0, 2.0, 2.0);
-        Aritmetica instance = new Aritmetica();
         Double expResult = 2.0;
-        Double result = instance.media(numeros);
+        Double result = instancia.media(numeros);
         assertEquals(expResult, result);
     }
 
@@ -38,23 +45,20 @@ public class AritmeticaTest {
     public void testMediaListaNula() {
         System.out.println("Media con lista nula");
         List<Double> numeros = null;
-        Aritmetica instance = new Aritmetica();
-        instance.media(numeros);
+        instancia.media(numeros);
     }
 
     @Test(expected = RuntimeException.class)
     public void testMediaValoresNegativos() {
         System.out.println("Media con valores negativos");
         List<Double> numeros = Arrays.asList(1.0, -1.0);
-        Aritmetica instance = new Aritmetica();
-        instance.media(numeros);
+        instancia.media(numeros);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testMediaListaVacia() {
         System.out.println("Media con la lista sin valores");
         List<Double> numeros = new ArrayList<>();
-        Aritmetica instance = new Aritmetica();
-        instance.media(numeros);
+        instancia.media(numeros);
     }
 }
