@@ -9,7 +9,7 @@ package com.mycompany.ejemplodao.servicios;
  *
  * @author dpalomar
  */
-public class FactoriaServicioAutenticacion {
+public abstract class FactoriaServicioAutenticacion {
     private static final ServicioAutenticacion SERVICIO = new ServicioAutenticacionImpl();
     public static ServicioAutenticacion get(){
         return SERVICIO;

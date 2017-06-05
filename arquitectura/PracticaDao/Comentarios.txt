@@ -5,3 +5,5 @@ EjemploDaoVersion2: ejemplo de los cambios necesarios si elegimos
 
 NOTA: todas las clases e interfaces están en el mismo paquete
       para facilitar su inspección
+
+EjemploDaoVersion3: creación de una capa de servicios
