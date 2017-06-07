@@ -7,3 +7,5 @@ NOTA: todas las clases e interfaces están en el mismo paquete
       para facilitar su inspección
 
 EjemploDaoVersion3: creación de una capa de servicios
+
+EjemploDaoVersion4: creación de un dao jbc
