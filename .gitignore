@@ -76,3 +76,6 @@ hs_err_pid*
 /arquitectura/EjemploPruebas/nbproject/
 /arquitectura/EjemploPruebas/target/
 /arquitectura/PracticaDao/EjemploDaoVersion4/target/
+/serviciosweb/Saaj/SaajServerMvn/target/
+/serviciosweb/Saaj/SaajClienteMvn/target/
+/serviciosweb/Saaj/SaajClienteApiMvn/target/

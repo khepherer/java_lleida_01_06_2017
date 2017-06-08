@@ -34,11 +34,12 @@ public class Principal {
                     () -> port.procesarFactura(f)
             ).thenApplyAsync(
                     ident -> port.obtenerFactura(ident)
-            ).whenCompleteAsync((f1, ex) -> LOG.log(Level.INFO, "Factura con id {0} e importe {1}.", new Object[]{f1.getId(), f1.getImporte()}));
+            ).whenCompleteAsync(
+                    (f1, ex) -> LOG.log(Level.INFO, "Factura con id {0} e importe {1}.", new Object[]{f1.getId(), f1.getImporte()})
+            ).join();
         } catch (Exception ex) {
             LOG.log(Level.SEVERE, "Error: {0}", ex);
         }        
-        Thread.sleep(Long.MAX_VALUE);
     }
 
 }
