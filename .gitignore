@@ -79,3 +79,6 @@ hs_err_pid*
 /serviciosweb/Saaj/SaajServerMvn/target/
 /serviciosweb/Saaj/SaajClienteMvn/target/
 /serviciosweb/Saaj/SaajClienteApiMvn/target/
+/servletsjsp/EjemploMVCMaven/target/
+/servletsjsp/EjemploParametrosMaven/target/
+/servletsjsp/ServletCicloVidaMaven/target/

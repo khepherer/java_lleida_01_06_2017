@@ -16,3 +16,5 @@ EjemploRestServletMaven: Implementación de un RESTful con una Servlet
 ClienteJavaScriptRestServletMaven: acceso a un RESTful desde una página Web usando AJAX y JSON
 EjemploRestSoap: integración con servicios SOAP
 EjemploRestSoapClient: cliente RESt para EjemploRestSoap
+EjemploRestXml: servicio web REStful que intercambia objetos en formato XML
+EjemploRestXmlClient: cliente para probar EjemploRestXml
