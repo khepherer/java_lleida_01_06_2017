@@ -4,6 +4,7 @@
  */
 package util;
 
+import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
@@ -15,25 +16,25 @@ import org.hibernate.service.ServiceRegistryBuilder;
  */
 public class HibernateUtil {
 
-    private static final SessionFactory sessionFactoryUno;
-    private static final SessionFactory sessionFactoryDos;
+    private static final SessionFactory SESSIONFACTORYUNO;
+    private static final SessionFactory SESSIONFACTORYDOS;
 
     static {
-        sessionFactoryUno = crearSesionFactory("recursos/sesionuno.cfg.xml");
-        sessionFactoryDos = crearSesionFactory("recursos/sesiondos.xml");
+        SESSIONFACTORYUNO = crearSesionFactory("recursos/sesionuno.cfg.xml");
+        SESSIONFACTORYDOS = crearSesionFactory("recursos/sesiondos.xml");
 
     }
 
     public static SessionFactory getSessionFactoryUno() {
-        return sessionFactoryUno;
+        return SESSIONFACTORYUNO;
     }
 
     public static SessionFactory getSessionFactoryDos() {
-        return sessionFactoryDos;
+        return SESSIONFACTORYDOS;
     }
 
     private static SessionFactory crearSesionFactory(String recurso) throws ExceptionInInitializerError {
-        SessionFactory sf = null;
+        SessionFactory sf;
         try {
             // Crear la factoría de sesiones definida por el parámetro 'recurso'
             Configuration conf = new Configuration().configure(recurso);
@@ -42,7 +43,7 @@ public class HibernateUtil {
             sf = conf.buildSessionFactory(s);
             System.out.format("Factoría de sesiones %s creada.\n", recurso);
             return sf;
-        } catch (Throwable ex) {
+        } catch (HibernateException ex) {
             System.err.println("La creación de la factoría de sesiones ha fallado." + ex);
             throw new ExceptionInInitializerError(ex);
         }

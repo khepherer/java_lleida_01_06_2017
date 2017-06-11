@@ -69,9 +69,9 @@ public class Principal {
             if (usuarios.isEmpty()) {
                 System.out.println("No hay usuarios que mostrar");
             } else {
-                for (Usuario usuario : usuarios) {
+                usuarios.forEach((usuario) -> {
                     System.out.println(usuario);
-                }
+                });
             }
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {

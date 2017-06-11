@@ -73,10 +73,7 @@ public class Usuario implements Serializable {
         if (!Objects.equals(this.nombre, other.nombre)) {
             return false;
         }
-        if (!Objects.equals(this.clave, other.clave)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.clave, other.clave);
     }
 
     @Override

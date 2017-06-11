@@ -49,7 +49,19 @@ public class Usuario implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 71 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 71 * hash + (this.nombre != null ? this.nombre.hashCode() : 0);
+        hash = 71 * hash + (this.clave != null ? this.clave.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
     public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj == null) {
             return false;
         }
@@ -57,25 +69,17 @@ public class Usuario implements Serializable {
             return false;
         }
         final Usuario other = (Usuario) obj;
-        if (this.nombre != other.nombre && (this.nombre == null || !this.nombre.equals(other.nombre))) {
+        if ((this.nombre == null) ? (other.nombre != null) : !this.nombre.equals(other.nombre)) {
             return false;
         }
-        if (this.clave != other.clave && (this.clave == null || !this.clave.equals(other.clave))) {
+        if ((this.clave == null) ? (other.clave != null) : !this.clave.equals(other.clave)) {
             return false;
         }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        hash = 67 * hash + (this.nombre != null ? this.nombre.hashCode() : 0);
-        hash = 67 * hash + (this.clave != null ? this.clave.hashCode() : 0);
-        return hash;
+        return !(this.id != other.id && (this.id == null || !this.id.equals(other.id)));
     }
 
     @Override
     public String toString() {
-        return String.format("La clave del usuario %s es %s y su id es %d", getNombre(), getClave(), getId());
+        return "Usuario{" + "id=" + id + ", nombre=" + nombre + ", clave=" + clave + '}';
     }
 }

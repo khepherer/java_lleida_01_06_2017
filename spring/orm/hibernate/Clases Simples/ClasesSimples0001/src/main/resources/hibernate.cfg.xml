@@ -4,7 +4,7 @@
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-<!-- Configuración del acceso a la base de datos -->
+        <!-- Configuración del acceso a la base de datos -->
         <property name="connection.driver_class">
             org.apache.derby.jdbc.ClientDriver
         </property>
@@ -13,27 +13,27 @@
         </property>
         <property name="connection.username">app</property>
         <property name="connection.password">app</property>
-<!-- Pool de conexiones JDBC -->
+        <!-- Pool de conexiones JDBC -->
         <property name="connection.pool_size">1</property>
-<!-- Dialecto SQL-->
+        <!-- Dialecto SQL-->
         <property name="dialect">
             org.hibernate.dialect.DerbyDialect
         </property>
-<!-- Activar la gestión automática de sesiones -->
+        <!-- Activar la gestión automática de sesiones -->
         <property name="current_session_context_class">thread</property>
-<!-- Desactivar el caché de segundo nivel -->
+        <!-- Desactivar el caché de segundo nivel -->
         <property name="cache.provider_class">
             org.hibernate.cache.NoCacheProvider
         </property>
-<!-- Mostrar con formato las sentencias SQL generadas -->
+        <!-- Mostrar con formato las sentencias SQL generadas -->
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
-<!-- Eliminar y volver a crear la base de datos -->
-<!--
+        <!-- Eliminar y volver a crear la base de datos -->
+        <!--
+                <property name="hbm2ddl.auto">create-drop</property>
+        -->        
         <property name="hbm2ddl.auto">create-drop</property>
--->        
-        <property name="hbm2ddl.auto">create-drop</property>
-<!-- Mapas clases-tablas -->        
+        <!-- Mapas clases-tablas -->        
         <mapping resource="mapas/Usuario.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
