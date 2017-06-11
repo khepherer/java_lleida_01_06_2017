@@ -14,7 +14,6 @@
 *.jar
 *.war
 *.ear
-*.zip
 *.tar.gz
 *.rar
 
@@ -86,3 +85,4 @@ hs_err_pid*
 /spring/orm/hibernate/Clases Simples/ClasesSimples0001/target/
 /spring/orm/hibernate/Clases Simples/ClasesSimples0002/target/
 /spring/orm/hibernate/Clases Simples/EjemploDosSf/target/
+/spring/IoC/Beans/proxies/Configurables/target/
