@@ -88,3 +88,6 @@ hs_err_pid*
 /spring/IoC/Beans/proxies/Configurables/target/
 /serviciosweb/RestJEE/EjemploRestXml/target/
 /serviciosweb/RestJEE/EjemploRestXmlClient/target/
+/servletsjsp/EjemploWebPersistenciaMaven/target/
+/servletsjsp/IntegracionMaven/target/
+/servletsjsp/JspMaven/target/
