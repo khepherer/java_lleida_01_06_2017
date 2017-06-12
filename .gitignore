@@ -86,3 +86,5 @@ hs_err_pid*
 /spring/orm/hibernate/Clases Simples/ClasesSimples0002/target/
 /spring/orm/hibernate/Clases Simples/EjemploDosSf/target/
 /spring/IoC/Beans/proxies/Configurables/target/
+/serviciosweb/RestJEE/EjemploRestXml/target/
+/serviciosweb/RestJEE/EjemploRestXmlClient/target/
