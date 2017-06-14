@@ -40,8 +40,8 @@ public class ErrorServlet extends HttpServlet {
             out.println("<title>Servlet ErrorServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ErrorServlet at " + request.getContextPath() + "</h1>");
-            out.println("Ha ocurrido un error");
+            out.println("<h1>Ha ocurrido un error</h1>");            
+            out.println("<br><a href='index.html'>Volver a la página principal</a>");
             out.println("</body>");
             out.println("</html>");
         }
