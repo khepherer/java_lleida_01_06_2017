@@ -47,10 +47,7 @@ private String matricula;
             return false;
         }
         final Vehiculo other = (Vehiculo) obj;
-        if ((this.matricula == null) ? (other.matricula != null) : !this.matricula.equals(other.matricula)) {
-            return false;
-        }
-        return true;
+        return !((this.matricula == null) ? (other.matricula != null) : !this.matricula.equals(other.matricula));
     }
 
     @Override

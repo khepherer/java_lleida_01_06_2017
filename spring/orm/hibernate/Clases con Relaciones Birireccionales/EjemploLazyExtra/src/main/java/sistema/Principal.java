@@ -43,9 +43,11 @@ public class Principal {
             session.persist(usuario);
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
-        } 
+        }
         return usuario;
     }
 
@@ -64,7 +66,9 @@ public class Principal {
             System.out.println("ROLES = " + usuario.getRoles().size());
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         }
     }

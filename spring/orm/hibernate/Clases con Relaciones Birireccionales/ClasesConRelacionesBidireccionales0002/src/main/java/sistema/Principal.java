@@ -7,7 +7,6 @@ package sistema;
 import beans.Rol;
 import beans.Usuario;
 import java.util.List;
-import java.util.Set;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -49,7 +48,9 @@ public class Principal {
             arrRoles[0].setNombre("Nombre actualizado");
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -67,7 +68,9 @@ public class Principal {
             session.delete(usuario);
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -90,7 +93,9 @@ public class Principal {
             rol.getUsuarios().add(usuario);
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -108,22 +113,26 @@ public class Principal {
             Query query = session.createQuery("from Rol");
             List<Rol> roles = query.list();
             session.getTransaction().commit();
-            if (roles.size() == 0) {
+            if (roles.isEmpty()) {
                 System.out.println("No hay roles que mostrar");
             } else {
-                for (Rol rol : roles) {
+                roles.stream().map((rol) -> {
                     System.out.println(rol);
-                    if (rol.getUsuarios().size() == 0) {
+                    return rol;
+                }).forEachOrdered((rol) -> {
+                    if (rol.getUsuarios().isEmpty()) {
                         System.out.println("Este rol no tiene usuarios asociados");
                     } else {
-                        for (Usuario usuario : rol.getUsuarios()) {
+                        rol.getUsuarios().forEach((usuario) -> {
                             System.out.println("Nombre del usuario " + usuario.getNombre());
-                        }
+                        });
                     }
-                }
+                });
             }
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -139,23 +148,27 @@ public class Principal {
             session.getTransaction().begin();
             Query query = session.createQuery("from Usuario");
             List<Usuario> usuarios = query.list();
-            if (usuarios.size() == 0) {
+            if (usuarios.isEmpty()) {
                 System.out.println("No hay usuarios que mostrar");
             } else {
-                for (Usuario usuario : usuarios) {
+                usuarios.stream().map((usuario) -> {
                     System.out.println(usuario);
-                    if (usuario.getRoles().size() == 0) {
+                    return usuario;
+                }).forEachOrdered((usuario) -> {
+                    if (usuario.getRoles().isEmpty()) {
                         System.out.println("Este usuario no tiene roles asociados");
                     } else {
-                        for (Rol rol : usuario.getRoles()) {
+                        usuario.getRoles().forEach((rol) -> {
                             System.out.println("Nombre del rol " + rol.getNombre());
-                        }
+                        });
                     }
-                }
+                });
             }
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {

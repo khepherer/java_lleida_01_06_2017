@@ -42,11 +42,13 @@ public class Principal {
             session = sessionFactory.getCurrentSession();
             session.getTransaction().begin();
             Usuario usuario = (Usuario) session.load(Usuario.class, id);
-            usuario.setNombre("Nombre de usuario actualizado");  
+            usuario.setNombre("Nombre de usuario actualizado");
             usuario.getRol().setNombre("Nombre de rol actualizado");
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -64,7 +66,9 @@ public class Principal {
             session.delete(usuario);
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -84,7 +88,9 @@ public class Principal {
             session.persist(usuario);
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {
@@ -101,16 +107,18 @@ public class Principal {
             session.getTransaction().begin();
             Query query = session.createQuery("from Usuario");
             List<Usuario> usuarios = query.list();
-            if (usuarios.size() == 0) {
+            if (usuarios.isEmpty()) {
                 System.out.println("No hay usuarios que mostrar");
             } else {
-                for (Usuario usuario : usuarios) {
+                usuarios.forEach((usuario) -> {
                     System.out.println(usuario);
-                }
+                });
             }
             session.getTransaction().commit();
         } catch (HibernateException hibernateException) {
-            session.getTransaction().rollback();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
             System.out.println("Ha ocurrido un error " + hibernateException);
         } finally {
             if (session != null && session.isOpen()) {

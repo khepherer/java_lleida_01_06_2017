@@ -17,7 +17,7 @@ public class Usuario implements Serializable {
     private Long id;
     private String nombre;
     private String clave;
-    private Set<Rol> roles = new HashSet<Rol>();
+    private Set<Rol> roles = new HashSet<>();
 
     public Usuario() {
     }
@@ -71,10 +71,7 @@ public class Usuario implements Serializable {
         if (this.nombre != other.nombre && (this.nombre == null || !this.nombre.equals(other.nombre))) {
             return false;
         }
-        if (this.clave != other.clave && (this.clave == null || !this.clave.equals(other.clave))) {
-            return false;
-        }
-        return true;
+        return !(this.clave != other.clave && (this.clave == null || !this.clave.equals(other.clave)));
     }
 
     @Override

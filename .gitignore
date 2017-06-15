@@ -93,3 +93,9 @@ hs_err_pid*
 /servletsjsp/JspMaven/target/
 /servletsjsp/Redireccion/target/
 /servletsjsp/UsoJstlMaven/target/
+/spring/orm/hibernate/Clases con componentes/ClasesConComponentes0001/target/
+/spring/orm/hibernate/Clases con componentes/ClasesConComponentes0002/target/
+/spring/orm/hibernate/Clases con jerarquías de herencia/ClasesConJerarquiasDeHerencia0001/target/
+/spring/orm/hibernate/Clases con Relaciones Birireccionales/ClasesConRelacionesBidireccionales0002/target/
+/spring/orm/hibernate/Clases con Relaciones Birireccionales/ClasesConRelacionesBidireccionales0003/target/
+/spring/orm/hibernate/Clases con Relaciones Birireccionales/EjemploLazyExtra/target/

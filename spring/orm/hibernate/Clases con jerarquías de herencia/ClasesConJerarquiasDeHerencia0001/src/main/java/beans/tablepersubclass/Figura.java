@@ -6,6 +6,7 @@
 package beans.tablepersubclass;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -47,10 +48,7 @@ private Integer color;
             return false;
         }
         final Figura other = (Figura) obj;
-        if (this.color != other.color && (this.color == null || !this.color.equals(other.color))) {
-            return false;
-        }
-        return true;
+        return !(!Objects.equals(this.color, other.color) && (this.color == null || !this.color.equals(other.color)));
     }
 
     @Override
