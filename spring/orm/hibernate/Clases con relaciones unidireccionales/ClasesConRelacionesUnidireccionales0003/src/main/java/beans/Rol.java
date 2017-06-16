@@ -47,10 +47,7 @@ public class Rol implements Serializable {
             return false;
         }
         final Rol other = (Rol) obj;
-        if (this.nombre != other.nombre && (this.nombre == null || !this.nombre.equals(other.nombre))) {
-            return false;
-        }
-        return true;
+        return !(this.nombre != other.nombre && (this.nombre == null || !this.nombre.equals(other.nombre)));
     }
 
     @Override
