@@ -102,3 +102,5 @@ hs_err_pid*
 /servletsjsp/Servlets30_0001/target/
 /spring/Web/EjemploMicroServicio/target/
 /spring/Web/EjemploRequestBody/target/
+/spring/dao/Hibernate/SpringDaoHibernate5Anotaciones/target/
+/spring/dao/Hibernate/SpringHibernate4/target/
