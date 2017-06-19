@@ -8,4 +8,7 @@
         <property name="nombre"/>
         <property name="clave"/>
     </class>
+    <query name="Usuario.findAll">
+        <![CDATA[select u from Usuario u]]>
+    </query>
 </hibernate-mapping>

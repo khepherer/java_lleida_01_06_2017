@@ -28,7 +28,7 @@ public class Principal {
         Principal p = new Principal();
         p.inicializarHibernate();
         Usuario usuario = p.crearUsuario();
-        p.mostrarUsuarios();
+        p.mostrarUsuariosNamedQuery();
         p.actualizarUsuario(usuario.getId());
         p.mostrarUsuarios();
         p.borrarUsuario(usuario.getId());
@@ -122,6 +122,22 @@ public class Principal {
                 session.close();
             }
         }
+    }
+
+    private void mostrarUsuariosNamedQuery() {
+        Session session;
+        session = sessionFactory.getCurrentSession();
+        session.getTransaction().begin();
+        Query query = session.getNamedQuery("Usuario.findAll");
+        List<Usuario> usuarios = query.list();
+        if (usuarios.isEmpty()) {
+            System.out.println("No hay usuarios que mostrar");
+        } else {
+            usuarios.forEach((usuario) -> {
+                System.out.println(usuario);
+            });
+        }
+        session.getTransaction().commit();
     }
 
     private void inicializarHibernate() {
