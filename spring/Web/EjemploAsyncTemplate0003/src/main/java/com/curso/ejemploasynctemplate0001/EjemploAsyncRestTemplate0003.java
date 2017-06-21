@@ -25,7 +25,7 @@ public class EjemploAsyncRestTemplate0003 {
      * @param args the command line arguments
      */
     public static void main(String... args) {
-        final String url = "http://localhost:8080/ver";
+        final String url = "http://localhost:8090/ver";
         AsyncRestTemplate async = new AsyncRestTemplate();
         ListenableFuture<ResponseEntity<Persona>> resultadoFuturo = async.getForEntity(url, Persona.class);
         resultadoFuturo.addCallback(new ListenableFutureCallback<ResponseEntity<Persona>>() {
