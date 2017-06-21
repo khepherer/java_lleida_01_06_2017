@@ -17,6 +17,24 @@
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
         <script type="text/javascript">
+            function ajaxPost() {
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:8090/nuevo",
+                    data: {                        
+                        "mensaje": $("#mensaje").val(),
+                        "usuarioId":${usuario.id}
+                    },
+                    success: function (data, textStatus, jqXHR) {
+                        console.log(data);
+                        const r = JSON.parse(data);                        
+                        $("#hueco").html(r);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        $("#hueco").html("Error: " + textStatus + " " + errorThrown);
+                    }
+                });
+            }            
             function verTodosLosTweets() {
                 fetch("http://localhost:8090/tweets")
                         .then((resp) => resp.json())
@@ -61,6 +79,10 @@
         </div>
         <div class="container">
             <pre id="hueco">Hueco para ver los datos</pre>
+        </div>
+        <div class="container">
+            <input id="mensaje" type="text" name="texto" placeholder="Introduce un texto" autofocus/>
+            <input type="button" value="Enviar" onclick="ajaxPost()"/>
         </div>
     </body>
 </html>
