@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.curso.ejemplorequestbody.repositorios;
+package com.curso.serviciotwitter.repositorios;
 
-import com.curso.ejemplorequestbody.entidades.Tweet;
+import com.curso.serviciotwitter.entidades.Tweet;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 

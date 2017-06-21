@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.curso.ejemplorequestbody.controladores;
+package com.curso.serviciotwitter.controladores;
 
-import com.curso.ejemplorequestbody.entidades.Tweet;
+import com.curso.serviciotwitter.entidades.Tweet;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.curso.ejemplorequestbody.repositorios.TweetRepo;
+import com.curso.serviciotwitter.repositorios.TweetRepo;
 import java.util.Arrays;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
