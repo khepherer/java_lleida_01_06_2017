@@ -1,1 +1,0 @@
-curl -X POST -H "Content-Type: application/json" -d "{\"mensaje\":\"abc\", \"usuarioId\":18}" http://localhost:8090/nuevo

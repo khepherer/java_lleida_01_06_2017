@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Error: " + ex);
         }
         request.setAttribute("usuario", result);
-        String destino = result.getId() != null ? "/entrada.jsp" : "/error.html";
+        String destino = result.getId() != 0 ? "/entrada.jsp" : "/error.html";
         getServletContext().getRequestDispatcher(destino).forward(request, response);        
     }
 

@@ -16,25 +16,51 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-<!--        <script type="text/javascript">
-            function f(){
-                var nodo = document.getElementById("usuarioId");
-                var numero = parseInt(nodo.innerHTML);
-                console.log($('#usuarioId').html());
-                console.log(parseInt($('#usuarioId').html()));
-                alert(numero);
+        <script type="text/javascript">
+            function verTodosLosTweets() {
+                fetch("http://localhost:8090/tweets")
+                        .then((resp) => resp.json())
+                        .then(data => {
+                            const d = JSON.stringify(data, null, 2);
+                            console.table(data);
+                            console.log('Id del primer usuario recibido:' + data[0].id);
+                            $('#hueco').html(d);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
             }
-        </script>-->
+            function verTweets(ident) {
+                console.log('Id del usuario que quiere ver sus tweets: ' + ident);
+                fetch("http://localhost:8090/tweets/" + ident)
+                        .then((resp) => resp.json())
+                        .then(data => {
+                            const d = JSON.stringify(data, null, 2);
+                            console.table(data);
+                            console.log('Id del primer usuario recibido:' + data[0].id);
+                            $('#hueco').html(d);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+            }
+        </script>
     </head>
     <body>
         <span id="usuarioId" hidden>${usuario.id}</span>
         <div class="container">
-            <h2>Bienvenid@ a MiniTwitter, ${usuario.id}, ${usuario.nombre}, ${usuario.clave}</h2>
-            <div class="list-group">
-                <a href="#" class="list-group-item">Tus tweets</a>
-                <a href="#" class="list-group-item">Nuevo Tweet</a>
-                <a href="index.html" class="list-group-item">Volver</a>
+            <h1>Abrir la consola del navegador</h1>
+            <h2>Bienvenid@ a MiniTwitter, ${usuario.nombre} (Id: ${usuario.id}, Clave: ${usuario.clave})</h2>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="verTodosLosTweets()">Todos los tweets</button>
+                <button class="btn btn-primary" onclick="verTweets(${usuario.id})">Tus tweets</button>                
+                <button class="btn btn-primary">Nuevo Tweet</button>
+                <a href="index.html" class="btn btn-info" role="button">Volver</a
             </div> 
+
+        </div>
+        <div class="container">
+            <pre id="hueco">Hueco para ver los datos</pre>
         </div>
     </body>
 </html>

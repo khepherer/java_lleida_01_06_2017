@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.curso.serviciotwitter.repositorios.TweetRepo;
 import java.util.Arrays;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -32,17 +33,20 @@ public class SimpleController {
         this.repo = repo;
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/nuevo")
     public Tweet tweet(@RequestBody Tweet n) {
         repo.save(n);
         return new Tweet(n.getId(), n.getMensaje().toUpperCase(), n.getUsuarioId());
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/tweets")
     public List<Tweet> todos() {
         return repo.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/tweets/{id}")
     public List<Tweet> tweet(@PathVariable("id") Long id) {
         Objects.requireNonNull(id);

@@ -35,7 +35,9 @@ public class Autenticador {
             Object singleResult = q.getSingleResult();
             return q.getSingleResult();
         } catch (Exception e) {
-            return new Usuario("no_existe", "no_existe");
+            Usuario u = new Usuario("no_existe", "no_existe");
+            u.setId(0L);
+            return u;
         }
     }
 }
