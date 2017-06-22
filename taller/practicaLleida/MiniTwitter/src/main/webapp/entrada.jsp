@@ -21,11 +21,12 @@
                 $.ajax({
                     type: "POST",
                     url: "http://localhost:8090/nuevo",
-                    data: {
-                        "mensaje": $("#mensaje").val(),
-                        "usuarioId":${usuario.id}
-                    },
+                    data: JSON.stringify({
+                        mensaje: $("#mensaje").val(),
+                        usuarioId:${usuario.id}
+                    }),
                     dataType: 'json',
+                    contentType: "application/json",
                     success: function (data, textStatus, jqXHR) {
                         console.log(data);
                         const r = JSON.parse(data);
